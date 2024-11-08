@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 
-// Animation for the info card
 export const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -21,6 +21,7 @@ export const Container = styled.section`
   align-items: center;
   height: 100%;
   max-height: 100vh;
+  overflow-x: hidden;
 `;
 
 export const Wrapper = styled.div`
@@ -30,25 +31,25 @@ export const Wrapper = styled.div`
   flex-direction: column;
 justify-content: center;
 align-items: center;
-  padding: 100px;
+  padding: 70px;
   @media (max-width: 900px) {
-   padding: 50px;
+   padding: 45px;
   }
   @media (max-width: 600px) {
-   padding: 25px;
+   padding: 20px;
   }
 `;
 
 // Title
 export const Title = styled.h2`
 font-family: 'roobert-bold';
-  font-size: clamp(20px, 6vw, 38px); 
+  font-size: clamp(20px, 5vw, 38px); 
   font-weight: bold;
   color: #000;
   margin-bottom: 70px;
   text-align: center;
-  @media (max-width: 600px) {
-    margin: 50px;
+  @media (max-width: 900px) {
+    margin-bottom: 50px;
   }
 `;
 
@@ -64,14 +65,30 @@ export const BackgroundWrapper = styled.div`
 `;
 
 // Background Image
-export const BackgroundImage = styled.img`
+export const BackgroundImage = styled(motion.img).attrs({
+  initial: { opacity: 0, scale: 0.5 },
+  whileInView: { opacity: 1, scale: [0.9, 1] },
+  transition: { 
+    duration: 0.5,
+    ease: "easeIn",
+  },
+  viewport: { once: true, amount: 0.5 } 
+})`
   width: 100%;
   height: auto;
   object-fit: cover;
 `;
 
 // Info Card with animation
-export const InfoCard = styled.div`
+export const InfoCard = styled(motion.div).attrs({
+  initial: { opacity: 0, scale: 0.5 },
+  whileInView: { opacity: 1, scale: 1 },
+  transition: { 
+    duration: 0.5,
+    ease: "easeIn",
+  },
+  viewport: { once: true, amount: 0.5 } 
+})`
   position: absolute;
   top: 23%;
   left: 3%;
@@ -84,7 +101,8 @@ export const InfoCard = styled.div`
   justify-content: center;
   align-items: flex-end;
   animation: ${fadeIn} 1s ease-out;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
 
   @media (max-width: 600px) {
     width: 100%;
@@ -94,7 +112,8 @@ export const InfoCard = styled.div`
    padding: 0;
    aspect-ratio: auto;
    border-radius: 4px;
-   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+   border: 2px solid black;
+  transition: all .3s ease;
   }
 
 `;

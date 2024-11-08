@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { AiOutlinePause } from "react-icons/ai";
 
+import { motion } from "framer-motion"
 export const Container=styled.div`
   display:flex;
   justify-content:space-between;
@@ -17,13 +17,13 @@ export const Wrapper=styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 35px 100px;
+  padding: 35px 70px;
  
   @media (max-width: 900px) {
-    padding: 50px;
+    padding: 45px;
   }
   @media (max-width: 600px) {
-    padding: 25px;
+    padding: 20px;
   }
 `
 
@@ -33,16 +33,30 @@ export const LogoContainer=styled.div`
   align-items:center;
 
 `
-export const MenuIcon=styled(AiOutlinePause)`
+
+export const MenuIcon=styled(motion.button).attrs({
+  whileHover:{ scale: 1},
+  whileTap:{ scale: 0.8 }})`
   display:flex;
   justify-content:center;
   align-items:center;
-  background-color: #ffffff;
-  transform: rotateZ(90deg);
+  /* background-color: #ffffff; */
+  background-color: ${(props) => (props.isWhiteBackground ? 'black' : 'white')};  /* Change background based on isWhiteBackground */
+  color: ${(props) => (props.isWhiteBackground ? 'white' : 'black')};  /* Change text color based on isWhiteBackground */
+  
   padding: 10px;
+  border: none;
   aspect-ratio: 1/1;
   font-size: 40px;
-
+  @media (max-width: 900px) {
+    font-size: 30px;
+  }
+  @media (max-width: 600px) {
+    font-size: 25px;
+  }
+  svg{
+    transform: rotateZ(90deg);
+  }
 `
 export const Logo=styled.img`
   display:flex;
