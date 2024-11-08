@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'roobert-bold';
+  src: url('../fonts/RoobertTRIAL-Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roobert-medium';
+  src: url('../fonts/RoobertTRIAL-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: 'roobert-medium','roobert-bold',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffff;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
