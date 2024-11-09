@@ -1,12 +1,12 @@
-import React ,{useRef}from 'react'
+import React from 'react'
 import hande1 from '../../assets/svg/hande1.svg'
 import hande2 from '../../assets/svg/hande2.svg'
 import hande3 from '../../assets/svg/hande3.svg'
-import { motion } from "framer-motion"
+
 
 import { Container,Background,TextWrapper,Wapper, Text ,Content,Images,MouseIcon,WrapperIcon} from '../../style/views/hero'
 const Hero = ({ contactRef }) => {
-  
+
   const handleMouseIconClick = () => {
     if (contactRef.current) {
       contactRef.current.scrollIntoView({ behavior: 'smooth' });

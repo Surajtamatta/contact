@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container,Title,BackgroundWrapper,BackgroundImage,InfoCard,DirectionArrow,Wrapper,InfoWrapper } from '../../style/views/location'
+import { Container,Title,BackgroundWrapper,BackgroundImage,InfoCard,Wrapper,InfoWrapper } from '../../style/views/location'
 import officeimage from '../../assets/Office.png'
 import { IoArrowForwardOutline } from "react-icons/io5";
 
