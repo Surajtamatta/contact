@@ -25,7 +25,7 @@ export const Wapper = styled.div`
   justify-content: center;
   align-content: end;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr 2fr;
@@ -73,8 +73,8 @@ margin: 0;
 
 
 export const Images = styled(motion.img).attrs({
-  initial: { opacity: 0, y:100 },
-  whileInView: { opacity: 1, y: 0 },
+  initial: { opacity: 0, x:50 },
+  whileInView: { opacity: 1, x: 0 },
   transition: {
     duration: 0.6,          
     ease:'easeIn', 
