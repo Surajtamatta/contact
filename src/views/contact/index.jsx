@@ -2,7 +2,7 @@ import React,{forwardRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { submitForm } from '../../redux/contact/formSlice';
+import { submitForm,resetStatus } from '../../redux/contact/formSlice';
 import {
   Container,
   Wrapper,
@@ -39,6 +39,13 @@ const Contact =forwardRef((props, ref) => {
 
     // reset(); 
   };
+
+  React.useEffect(() => {
+    if (status === 'succeeded') {
+      const timer = setTimeout(() => dispatch(resetStatus()), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [status, dispatch]);
 
   return (
     <Container ref={ref} >
@@ -94,6 +101,7 @@ const Contact =forwardRef((props, ref) => {
             <SubmitButton type="submit" disabled={status === 'loading'}>
               {status === 'loading' ? 'Sending...' : 'Send Proposal'}
             </SubmitButton>
+   
             {status === 'failed' && <ErrorText>{error}</ErrorText>}
             {status === 'succeeded' && <p>Form submitted successfully!</p>}
           </StyledForm>

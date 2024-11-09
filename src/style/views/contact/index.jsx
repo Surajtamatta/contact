@@ -147,14 +147,13 @@ export const StyledInput = styled.input`
 `;
 export const Textarea = styled.textarea`
   width: 100%;
-
   height: 100%;
   resize: none;
-  padding: 10px;
+
   font-weight: 500;
   text-indent: 20px;
   padding: 15px 0;
-  padding: 20px 0;
+
   border: 2px solid #101010;
   font-size: clamp(12px, 2vw, 16px); 
 
